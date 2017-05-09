@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:id="@+id/countyTv"
+            android:layout_marginLeft="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开县"
+            android:textSize="20sp"
+            />
+        <TextView
+            android:layout_marginLeft="12dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="晴"
+            android:textSize="15sp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:gravity="center"
+             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="25'C"
+            android:textSize="25sp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
