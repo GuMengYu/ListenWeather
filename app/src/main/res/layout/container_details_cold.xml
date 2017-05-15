@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_details_cold"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/container_details_cold_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cold"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        style="@style/material_icon"
+        tools:ignore="ContentDescription,RtlHardcoded"
+        />
+    <TextView
+        android:id="@+id/container_details_cold_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/container_details_cold_icon"
+
+        android:text="感冒指数（少发）"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginRight="@dimen/normal_margin"
+        android:textSize="@dimen/title_text_size"
+        tools:ignore="RtlHardcoded"
+
+        />
+    <TextView
+        android:id="@+id/container_details_cold_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/container_details_cold_title"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/container_details_cold_icon"
+        android:lineSpacingMultiplier="1.3"
+        android:layout_marginRight="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:text="各项气象条件适宜，无明显降温过程，发生感冒机率较低。"
+        tools:ignore="RtlHardcoded"
+          />
+</RelativeLayout>

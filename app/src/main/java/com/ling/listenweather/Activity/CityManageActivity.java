@@ -1,7 +1,9 @@
 package com.ling.listenweather.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.design.widget.FloatingActionButton;
 
 import android.support.v7.widget.LinearLayoutManager;
@@ -29,6 +31,10 @@ public class CityManageActivity extends BaseActivity {
     private List<CountyChosen> list = new ArrayList<>();
 
     private SelectedCityAdapter selectedCityAdapter;
+
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
+
     @BindView(R.id.chosenCityListRv)
     RecyclerView chosenCityListRv;
     @BindView(R.id.fab)
@@ -44,11 +50,27 @@ public class CityManageActivity extends BaseActivity {
          toolbar.setTitle("城市管理");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
          selectedCityAdapter = new SelectedCityAdapter(this,list);
          chosenCityListRv.setLayoutManager(new LinearLayoutManager(this));
          chosenCityListRv.setAdapter(selectedCityAdapter);
 
+         selectedCityAdapter.setOnRecyclerViewItemClickListener(new SelectedCityAdapter.OnRecyclerViewItemClickListener() {
+             @Override
+             public void onItemClick(View view, String data) {
+                 Intent intent = new Intent(CityManageActivity.this,MainActivity.class);
+                 intent.putExtra("weatherId",data);
+                 startActivity(intent);
+
+                 editor = sharedPreferences.edit();
+                 editor.putString("weatherId",data);
+                 editor.apply();
+
+                 finish();
+
+             }
+         });
          queryCityFDb();
 
         fab.setOnClickListener(new View.OnClickListener() {

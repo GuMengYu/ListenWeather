@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_details_drsg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<ImageView
+    android:id="@+id/container_details_drsg_icon"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/ic_forecast"
+    android:layout_alignParentTop="true"
+    android:layout_alignParentLeft="true"
+    style="@style/material_icon"
+    tools:ignore="ContentDescription,RtlHardcoded"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/container_details_drsg_title"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/container_details_drsg_icon"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginRight="@dimen/normal_margin"
+        android:text="穿衣建议（舒适）"
+        android:textSize="@dimen/title_text_size"
+        tools:ignore="RtlHardcoded"
+
+        />
+    <TextView
+        android:id="@+id/container_details_drsg_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/container_details_drsg_icon"
+        android:layout_below="@id/container_details_drsg_title"
+        android:layout_marginTop="2dp"
+        android:layout_marginRight="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:lineSpacingMultiplier="1.3"
+        android:text="建议着长袖T恤、衬衫加单裤等服装。年老体弱者宜着针织长袖衬衫、马甲和长裤。"
+        android:textSize="@dimen/content_text_size"
+        tools:ignore="RtlHardcoded"
+        />
+</RelativeLayout>
